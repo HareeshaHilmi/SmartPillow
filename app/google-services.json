@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "108805909018",
+    "firebase_url": "https://smartpillow-f5c64.firebaseio.com",
+    "project_id": "smartpillow-f5c64",
+    "storage_bucket": "smartpillow-f5c64.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:108805909018:android:89161b6e150a21de4f7fa3",
+        "android_client_info": {
+          "package_name": "com.example.smartpillow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "108805909018-btdrgu8qq34h0ro114ocjs8juc1p80hj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smartpillow",
+            "certificate_hash": "b1a98b7c246cc949f68c017883f1b1a16ea78174"
+          }
+        },
+        {
+          "client_id": "108805909018-6mcr1o7qb4vn02ugjsk5p9vjistlgdji.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXOaPqBI6CXGlIcEhF2PVv6R6_5KfHS1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "108805909018-6mcr1o7qb4vn02ugjsk5p9vjistlgdji.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
