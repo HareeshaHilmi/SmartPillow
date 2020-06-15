@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
         /**/
 
-        resendCode  = findViewById((R.id.resendCode));
-        verifyMsg   = findViewById(R.id.verifyMsg);
 
         userID  = fAuth.getCurrentUser().getUid();
         final FirebaseUser user = fAuth.getCurrentUser();
@@ -66,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Logout(View view) {
-        FirebaseAuth.getInstance().signOut();
+        // FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(),Login.class));
         finish();
     }
