@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,12 +14,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class Register extends AppCompatActivity {
     EditText mUserName,mEmail,mPhone,mPassword;
@@ -40,8 +36,8 @@ public class Register extends AppCompatActivity {
         mEmail      =findViewById(R.id.email);
         mPhone      =findViewById(R.id.phoneNum);
         mPassword   =findViewById(R.id.password);
-        mRegisterBtn = findViewById(R.id.Registerbtn);
-        mLoginBtn    = findViewById(R.id.createText);
+        mRegisterBtn = findViewById(R.id.Loginbtn);
+        mLoginBtn    = findViewById(R.id.LoginBtn);
         fAuth       =FirebaseAuth.getInstance();
         progressBar =findViewById(R.id.progressBar);
 
@@ -80,12 +76,21 @@ public class Register extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(Register.this,"User Created",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(),Login.class));
                         }else {
                             Toast.makeText(Register.this,"Erro ! "+ task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+
+
+            }
+        });
+
+        mLoginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Login.class));
             }
         });
     }

@@ -39,8 +39,8 @@ public class Login extends AppCompatActivity {
         mPassword   =   findViewById(R.id.password);
         progressBar =   findViewById(R.id.progressBar);
         fAuth       =   FirebaseAuth.getInstance();
-        mLoginBtn   =   findViewById(R.id.Registerbtn);
-        mCreateBtn  =   findViewById(R.id.createText);
+        mLoginBtn   =   findViewById(R.id.Loginbtn);
+        mCreateBtn  =   findViewById(R.id.LoginBtn);
         forgotTextLink = findViewById(R.id.forgotPassword);
 
         mLoginBtn.setOnClickListener(new View.OnClickListener(){
@@ -51,7 +51,7 @@ public class Login extends AppCompatActivity {
                 String password = mPassword.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)){
-                    mEmail.setError("Email is Required");
+                    mEmail.setError("Email is Required. ");
                     return;
                 }
 
@@ -73,6 +73,20 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
+                            Toast.makeText(Login.this,"Logged in Successfully",Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        }else {
+                                Toast.makeText(Login.this,"Erro ! "+task.getException(),Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+
+
+                /*fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
                             Toast.makeText(Login.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         }else{
@@ -80,7 +94,7 @@ public class Login extends AppCompatActivity {
                             progressBar.setVisibility(View.GONE);
                         }
                     }
-                });
+                });*/
             }
         });
 
