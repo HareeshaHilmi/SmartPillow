@@ -2,6 +2,7 @@ package com.example.smartpillow;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,12 +12,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
 
     @Override
@@ -32,4 +35,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(),Login.class));
         finish();
     }
+
+
+    /*public void Location(View view) {
+        startActivity(new Intent(getApplicationContext(),SelectLocation.class));
+        finish();
+    }*/
 }

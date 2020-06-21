@@ -25,7 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Login extends AppCompatActivity {
     EditText mEmail,mPassword;
     Button mLoginBtn;
-    TextView mCreateBtn, forgotTextLink;
+    TextView mCreateBtn, forgotTextLink, location;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
 
@@ -40,8 +40,10 @@ public class Login extends AppCompatActivity {
         progressBar =   findViewById(R.id.progressBar);
         fAuth       =   FirebaseAuth.getInstance();
         mLoginBtn   =   findViewById(R.id.Loginbtn);
-        mCreateBtn  =   findViewById(R.id.LoginBtn);
+        mCreateBtn  =   findViewById(R.id.LocationBtn);
         forgotTextLink = findViewById(R.id.forgotPassword);
+
+        location = findViewById(R.id.locBtn);
 
         mLoginBtn.setOnClickListener(new View.OnClickListener(){
 
@@ -102,6 +104,13 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), Register.class));
+            }
+        });
+
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), SelectLocation.class));
             }
         });
 
